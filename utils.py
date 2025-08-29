@@ -54,10 +54,14 @@ async def save_file(file, order_folder, file_name=None):
             file_path = order_folder / file_name
             counter += 1
 
+        # ИСПРАВЛЕННАЯ СТРОКА - используем download_to_drive
         await file.download_to_drive(custom_path=str(file_path))
 
         if file_path.exists() and file_path.stat().st_size > 0:
             return str(file_path)
+        return None
+    except Exception as e:
+        logger.error(f"Ошибка сохранения файла: {e}")
         return None
     except Exception as e:
         logger.error(f"Ошибка сохранения файла: {e}")
