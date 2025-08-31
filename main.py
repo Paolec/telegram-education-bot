@@ -9,7 +9,7 @@ from datetime import datetime, time
 from config import Config
 from database import init_db
 from utils import error_handler, check_deadlines, handle_wrong_input, cleanup_old_files
-from handlers.user_handlers import (
+from user_handlers import (
     user_start, user_cancel, user_create_order, user_choose_discipline, user_choose_work_type,
     user_set_custom_work_type, user_handle_deadline, user_handle_budget_type, user_handle_budget,
     user_handle_plagiarism_required, user_handle_plagiarism_system, user_handle_plagiarism_percent,
@@ -24,7 +24,7 @@ from handlers.user_handlers import (
     USER_CHOOSING_PLAGIARISM_SYSTEM, USER_SET_PLAGIARISM_PERCENT, USER_UPLOAD_FILES, USER_SET_DESCRIPTION,
     USER_VIEWING_ORDERS, USER_INFO_MENU, USER_ORDER_DETAILS
 )
-from handlers.admin_handlers import (
+from admin_handlers import (
     admin_start, admin_cancel, admin_view_all_orders, admin_orders_by_status, admin_handle_orders_navigation,
     admin_order_details, admin_handle_message, admin_force_set_price, admin_handle_force_price,
     admin_upload_work, admin_handle_completed_file, admin_finish_upload_work, admin_complete_order,
